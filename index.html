@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17181d">
+  <meta name="apple-mobile-web-app-title" content="Sprintline">
+  <title>Sprintline</title>
+  <link rel="icon" href="assets/icons/sprintline/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/sprintline/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="workspace-data.js" defer></script>
+  <script src="workspace-store.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="offline.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview">
+      <img src="assets/sprintline.svg" width="183" height="37" alt="Sprintline overview">
+    </a>
+    <nav aria-label="Workspace">
+      <p class="nav-label">Workspace</p>
+      <a class="nav-link" href="#overview" data-page="overview"><span data-icon="overview"></span>Overview</a>
+      <a class="nav-link" href="#calendar" data-page="calendar"><span data-icon="calendar"></span>Calendar</a>
+      <a class="nav-link" href="#projects" data-page="projects"><span data-icon="folder"></span>Projects</a>
+      <a class="nav-link" href="#tasks" data-page="tasks"><span data-icon="check-square"></span>Tasks</a>
+      <a class="nav-link" href="#usage" data-page="usage"><span data-icon="gauge"></span>Usage</a>
+      <div class="nav-projects">
+        <div class="nav-heading"><p class="nav-label">Projects</p><button class="icon-button" type="button" data-action="new-project" aria-label="New project"><span data-icon="plus"></span></button></div>
+        <div id="project-navigation"></div>
+      </div>
+    </nav>
+    <a class="nav-link sidebar-footer" href="#settings" data-page="settings"><span data-icon="settings"></span>Settings</a>
+  </aside>
+  <div class="workspace">
+    <header class="mobile-brand">
+      <a class="brand" href="#overview"><img src="assets/sprintline.svg" width="183" height="37" alt="Sprintline overview"></a>
+    </header>
+    <div class="connection-status" id="connection-status" role="status"></div>
+    <main class="main" id="main" aria-busy="true"><p class="muted">Opening workspace…</p></main>
+  </div>
+  <nav class="bottom-nav" aria-label="Workspace">
+    <a href="#overview" data-page="overview"><span data-icon="overview"></span>Overview</a>
+    <a href="#calendar" data-page="calendar"><span data-icon="calendar"></span>Calendar</a>
+    <a href="#projects" data-page="projects"><span data-icon="folder"></span>Projects</a>
+    <a href="#tasks" data-page="tasks"><span data-icon="check-square"></span>Tasks</a>
+    <a href="#usage" data-page="usage"><span data-icon="gauge"></span>Usage</a>
+    <a href="#settings" data-page="settings"><span data-icon="settings"></span>Settings</a>
+  </nav>
+  <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

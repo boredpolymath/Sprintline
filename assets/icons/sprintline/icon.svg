@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
+  <title>Sprintline app icon</title>
+  <path fill="#242036" d="M0 0h64v64H0z"/>
+  <path fill="#c0b5fc" transform="translate(12 13.3)" d="M40 4H18a8 8 0 0 0-6 2.8L5.8 14a4.8 4.8 0 0 0 3.7 8H25l-4.1 4.8H5.6L0 33.4h19.8a8 8 0 0 0 6.1-2.8l6.2-7.2a4.8 4.8 0 0 0-3.7-8H12.9l4.1-4.8h17.4Z"/>
+</svg>

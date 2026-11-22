@@ -1,0 +1,40 @@
+name: Deploy Sprintline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --test
+      - uses: actions/configure-pages@v5
+      - name: Package static site
+        run: |
+          mkdir -p _site/assets/icons/sprintline
+          cp index.html styles.css workspace-data.js workspace-store.js app.js offline.js manifest.webmanifest _site/
+          cp assets/sprintline.svg _site/assets/
+          cp assets/icons/sprintline/{favicon.ico,apple-touch-icon.png,icon-192.png,icon-512.png} _site/assets/icons/sprintline/
+          sed "s/'local-dev'/'${GITHUB_SHA}'/" service-worker.js > _site/service-worker.js
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
