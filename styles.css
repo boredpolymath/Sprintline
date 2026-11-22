@@ -264,13 +264,17 @@ input[type="checkbox"] { accent-color: var(--accent); }
 @media (max-width: 720px) {
   :root {
     --bottom-nav-height: 58px;
+    --safe-top: env(safe-area-inset-top, 0px);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --mobile-header-height: calc(53px + var(--safe-top));
+    scroll-padding-top: var(--mobile-header-height);
     scroll-padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
   }
   .sidebar { display: none; }
   .mobile-brand {
     display: flex; justify-content: center; align-items: center;
-    padding: calc(4px + env(safe-area-inset-top, 0px)) 0 4px;
+    position: sticky; top: 0; z-index: 3;
+    height: var(--mobile-header-height); padding-top: var(--safe-top);
     background: var(--sidebar); border-bottom: 1px solid var(--border);
   }
   .mobile-brand img { width: 132px; }
