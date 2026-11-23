@@ -19,3 +19,11 @@ Sprintline is a personal workspace for scheduling focused coding sessions, conne
 ## Your workspace stays in your browser
 
 Sprintline uses browser storage for projects, tasks, schedules, and usage readings. Use **Settings → Export JSON** to keep a backup. **Import JSON** restores that backup or moves it to another browser or device.
+
+## Contributing
+
+See the [contributing guide](CONTRIBUTING.md) to run Sprintline locally, report bugs, or propose changes. See the [security policy](SECURITY.md) to report a vulnerability privately.
+
+## License
+
+Sprintline is released under the [MIT License](LICENSE).
